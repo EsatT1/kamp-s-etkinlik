@@ -1,0 +1,179 @@
+/* Mahmut Esat Özkan - 2321032067 */
+:root {
+    --no: 2321032067;
+    --ton: mod(var(--no), 360);
+    --renk-ana: hsl(var(--ton) 65% 38%);
+    --renk-zemin: hsl(var(--ton) 30% 97%);
+    --font: "Palatino Linotype", serif;
+    --bosluk-m: 1rem;   --kose: 8px;
+}
+ body { 
+    font-family: var(--font); 
+    background-color: var(--renk-zemin); 
+    color: var(--renk-ana);
+}
+
+/* Kart Kapsayıcısı (Telefon öncelikli: tek sütun) */
+section {
+    display: grid;
+    grid-template-columns: 1fr; /* Telefonda yan yana 1 kart gösterir */
+    gap: var(--bosluk-m); /* Kartlar arası boşluk */
+    margin-top: var(--bosluk-m);
+}
+
+/* Geniş Ekran (Tablet ve Bilgisayar: birden fazla sütun) */
+@media (min-width: 600px) {
+    section {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+    }
+}
+
+/* Tekil Kart Tasarımı */
+article {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: var(--kose);
+    padding: var(--bosluk-m);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+article h3 {
+    margin-top: 0;
+    color: var(--renk-ana);
+}
+
+/* =========================================
+   1. ÜST BAŞLIK VE MENÜ (YEŞİL ŞERİT)
+   ========================================= */
+header {
+    background-color: var(--renk-ana); /* Öğrenci numaranın yeşil tonu */
+    color: white;                      /* Beyaz metin */
+    padding: var(--bosluk-m);
+    border-radius: var(--kose);
+    margin-bottom: var(--bosluk-m);
+}
+
+header h2 {
+    margin: 0 0 0.5rem 0;
+    color: white;
+}
+
+header nav a {
+    color: white;                      /* Menü linkleri beyaz */
+    text-decoration: none;
+    margin-right: 1rem;
+    font-weight: 500;
+}
+
+header nav a:hover {
+    text-decoration: underline;        /* Üzerine gelince altı çizilsin */
+}
+
+/* =========================================
+   2. FORMLAR, GİRDİ ALANLARI VE BUTONLAR
+   ========================================= */
+form {
+    max-width: 500px; /* Form çok genişleyip yayılmasın */
+}
+
+form label {
+    display: block;                  /* Etiket kutunun üstünde tek başına dursun */
+    margin-top: var(--bosluk-m);
+    font-weight: bold;
+    color: var(--renk-ana);
+}
+
+form input[type="text"],
+form input[type="date"],
+form select,
+form textarea {
+    width: 100%;                     /* Kutular alanı tam kaplasın */
+    padding: 0.6rem;
+    margin-top: 0.3rem;
+    border: 1px solid #ccc;
+    border-radius: var(--kose);
+    font-family: inherit;
+    box-sizing: border-box;          /* Taşmayı önler */
+    background-color: white;
+}
+
+/* Hocanın slaytındaki gibi: Boş bırakılan hatalı alanın kırmızı çerçevesi */
+form input:invalid:focus {
+    border: 1px solid red;
+    background-color: #fff5f5;
+}
+
+/* Kaydet ve Güncelle butonları */
+button, 
+input[type="submit"] {
+    background-color: var(--renk-ana); /* Yeşil buton */
+    color: white;
+    padding: 0.7rem 1.5rem;
+    border: none;
+    border-radius: var(--kose);
+    margin-top: var(--bosluk-m);
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+button:hover,
+input[type="submit"]:hover {
+    opacity: 0.9;                    /* Üzerine gelince hafif parlasın */
+}
+
+/* =========================================
+   3. DETAY SAYFASI (AFİŞ SOLDA, KÜNYE SAĞDA)
+   ========================================= */
+.detay-kapsayici {
+    display: grid;
+    grid-template-columns: 1fr;      /* Telefonda alt alta tek sütun */
+    gap: var(--bosluk-m);
+    margin-top: var(--bosluk-m);
+}
+
+.afis-alani {
+    background-color: #d8ebd8;       /* Hocanın afiş görseli için koyduğu açık yeşil alan */
+    padding: 2rem;
+    text-align: center;
+    margin: 0;
+    border-radius: var(--kose);
+    min-height: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Künye (Description List) tanım listesi düzeni */
+dl {
+    display: grid;
+    grid-template-columns: auto 1fr; /* Başlık sola, değer sağa */
+    gap: 0.6rem 1.5rem;
+    background-color: white;
+    padding: var(--bosluk-m);
+    border-radius: var(--kose);
+    border: 1px solid #eee;
+}
+
+dt {
+    font-weight: bold;
+    color: var(--renk-ana);
+}
+
+dd {
+    margin: 0;
+}
+
+/* Geniş ekranda afiş solda, bilgiler sağda yan yana */
+@media (min-width: 600px) {
+    .detay-kapsayici {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+/* Sprint 3: Hatalı form alanları */
+[aria-invalid="true"] {
+    border: 2px solid red !important;
+    outline: none;
+}

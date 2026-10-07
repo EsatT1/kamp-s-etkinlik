@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <link rel="stylesheet" href="css/2321032067.css">
+    <script type="module" src="js/event-form.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kampüs Etkinlikleri - Etkinlik Güncelle</title>
+</head>
+<body>
+    <header>
+        <h2>Kampüs Etkinlikleri</h2>
+        <nav>
+            <a href="index.html">Ana Sayfa</a>
+            <a href="etkinlikler.html">Etkinlikler</a>
+            <a href="etkinlik-ekle.html">Liste Ekle</a>
+        </nav>
+    </header>
+
+    <main style="max-width: 600px; margin: 20px auto; padding: 0 15px;">
+        <h2>Etkinlik Güncelle</h2>
+        
+        <!-- data-mode="guncelle": Güncelleme modu işareti -->
+        <form id="etkinlik-formu" data-mode="guncelle" novalidate>
+            <div>
+                <label for="ad">Etkinlik Adı:</label><br>
+                <input type="text" id="ad" name="ad" required><br>
+                <span id="ad-hata" style="color: red; font-size: 0.85rem;"></span>
+            </div>
+            <br>
+            <div>
+                <label for="kategori">Kategori:</label><br>
+                <select id="kategori" name="kategori" required>
+                    <option value="">Seçiniz</option>
+                    <option value="Seminer">Seminer</option>
+                    <option value="Atölye">Atölye</option>
+                    <option value="Yarışma">Yarışma</option>
+                </select><br>
+                <span id="kategori-hata" style="color: red; font-size: 0.85rem;"></span>
+            </div>
+            <br>
+            <div>
+                <label for="tarih">Tarih:</label><br>
+                <input type="date" id="tarih" name="tarih" required><br>
+                <span id="tarih-hata" style="color: red; font-size: 0.85rem;"></span>
+            </div>
+            <br>
+            <div>
+                <label for="saat">Saat:</label><br>
+                <input type="time" id="saat" name="saat" required><br>
+                <span id="saat-hata" style="color: red; font-size: 0.85rem;"></span>
+            </div>
+            <br>
+            <div>
+                <label for="konum">Konum / Yer:</label><br>
+                <input type="text" id="konum" name="konum" required><br>
+                <span id="konum-hata" style="color: red; font-size: 0.85rem;"></span>
+            </div>
+            <br>
+            <div>
+                <label for="aciklama">Açıklama:</label><br>
+                <textarea id="aciklama" name="aciklama" rows="3" style="width: 100%;"></textarea><br>
+                <span id="aciklama-hata" style="color: red; font-size: 0.85rem;"></span>
+            </div>
+            <br>
+            <div>
+                <label for="kontenjan">Kontenjan:</label><br>
+                <input type="number" id="kontenjan" name="kontenjan" min="1" required><br>
+                <span id="kontenjan-hata" style="color: red; font-size: 0.85rem;"></span>
+            </div>
+            <br>
+            <button type="submit" id="btn-kaydet" style="padding: 10px 20px; background-color: #2e7d32; color: white; border: none; border-radius: 4px; cursor: pointer;">Güncelle</button>
+        </form>
+
+        <div id="form-mesaj" style="margin-top: 15px;"></div>
+    </main>
+
+    <br>
+    <footer>
+        <p>Ad Soyad - 2026</p>
+    </footer>
+</body>
+</html>
