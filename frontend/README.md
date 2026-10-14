@@ -1,4 +1,4 @@
-https://kamp-s-etkinlik-sprint2-345h1kck7-esat7.vercel.app/
+kamp-s-etkinlik-83djtpzjf-esat7.vercel.app
 
 # Kampüs Etkinlikleri - Sprint 4 (React + TypeScript + Vite)
 
