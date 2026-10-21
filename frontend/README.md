@@ -1,5 +1,4 @@
-kamp-s-etkinlik-83djtpzjf-esat7.vercel.app
-
+kamp-s-etkinlik-kv0zwa97z-esat7.vercel.app
 # Kampüs Etkinlikleri - Sprint 4 (React + TypeScript + Vite)
 
 Bu proje, önceki sprintlerde geliştirilen Kampüs Etkinlikleri uygulamasının React, TypeScript ve Vite altyapısına taşınmış SPA (Single Page Application) sürümüdür.
