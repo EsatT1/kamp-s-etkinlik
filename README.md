@@ -1,10 +1,17 @@
-[kamp-s-etkinlik-kv0zwa97z-esat7.vercel.app](https://kamp-s-etkinlik-kv0zwa97z-esat7.vercel.app)
-# Kampüs Etkinlikleri - Sprint 5s (React + TypeScript + Vite)
+# Kampüs Etkinlikleri - Frontend 
 
-Bu proje, önceki sprintlerde geliştirilen Kampüs Etkinlikleri uygulamasının React, TypeScript ve Vite altyapısına taşınmış SPA (Single Page Application) sürümüdür.
+Süleyman Demirel Üniversitesi Kampüs Etkinlikleri takip ve yönetim platformu frontend uygulaması.
 
-## Özellikler
-- **State Tabanlı Sayfa Geçişi:** Router olmadan `page` state'i ile 5 sayfa (Ana Sayfa, Etkinlikler, Ekle, Detay, Güncelle) yönetimi.
-- **Dinamik Listeleme & Filtreleme:** Anlık arama ve kategori filtreleme.
-- **Tip Güvenliği:** TypeScript ile tanımlanmış veri modelleri (`CampusEvent`, `Category`).
-- **Saf Fonksiyonlar:** DOM'dan bağımsız `searchEvents`, `filterByCategory`, `findEventById` yardımcı fonksiyonları.
+## 🚀 Canlı Yayın (Vercel)
+- **Canlı Proje Adresi:** [https://mahmutesatozkan-frontend.vercel.app](https://mahmutesatozkan-frontend.vercel.app)
+
+## 🛠️ Kurulum ve Çalıştırma
+
+Projeyi yerel geliştirme ortamında çalıştırmak için terminalde aşağıdaki komutları sırasıyla yürütün:
+
+```bash
+# Bağımlılıkları yükleyin
+npm install
+
+# Geliştirme sunucusunu başlatın
+npm run dev

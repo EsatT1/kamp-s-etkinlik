@@ -1,70 +1,64 @@
 import type { CampusEvent } from "../types/campus-event";
 
-export const events: CampusEvent[] = [
+export const initialEvents: CampusEvent[] = [
   {
     id: "event-1",
-    title: "Kariyer Günleri 2026",
+    title: "Yapay Zeka ve Gelecek Semineri",
     category: "Seminer",
-    capacity: 100,
-    date: "12-10-2026",
-    time: "14:00",
-    location: "A Blok Konferans Salonu",
-    description: "Mezunlarla kariyer söyleşileri ve şirket stantları.",
-    image: "/afis.svg"
+    date: "2026-11-15",
+    location: "Amfi-1",
+    capacity: 150,
+    description: "Yapay zeka teknolojilerinin geleceği ve kariyer fırsatları üzerine seminer.",
+    imageUrl: "https://picsum.photos/400/200?random=1"
   },
   {
     id: "event-2",
     title: "Robotik Atölyesi",
     category: "Atölye",
-    capacity: 20,
-    date: "20-10-2026",
-    time: "10:00",
-    location: "Bilgisayar Laboratuvarı 2",
-    description: "Arduino ile çizgi izleyen robot yapımı, başlangıç seviyesi.",
-    image: "/afis.svg"
+    date: "2026-11-20",
+    location: "Mühendislik Lab-2",
+    capacity: 30,
+    description: "Temel robotik ve mikrodenetleyici programlama uygulamalı atölye çalışması.",
+    imageUrl: "https://picsum.photos/400/200?random=2"
   },
   {
     id: "event-3",
-    title: "Siber Güvenlik Dünyası",
+    title: "Siber Güvenlik Söyleşisi",
     category: "Söyleşi",
-    capacity: 50,
-    date: "27-10-2026",
-    time: "15:30",
-    location: "B Blok Amfi 1",
-    description: "Etik hackerlık ve web güvenliği temelleri üzerine söyleşi.",
-    image: "/afis.svg"
+    date: "2026-11-25",
+    location: "Lütfü Çakmakçı Kültür Merkezi",
+    capacity: 200,
+    description: "Siber güvenlikte güncel tehditler ve korunma yöntemleri üzerine uzman söyleşisi.",
+    imageUrl: "https://picsum.photos/400/200?random=3"
   },
   {
     id: "event-4",
-    title: "Yapay Zeka ve Gelecek",
-    category: "Seminer",
-    capacity: 80,
-    date: "29-10-2026",
-    time: "13:00",
-    location: "Merkezi Kütüphane Salonu",
-    description: "Büyük dil modelleri ve yapay zekanın iş dünyasına etkileri.",
-    image: "/afis.svg"
+    title: "Kampüs Akustik Konseri",
+    category: "Konser",
+    date: "2026-12-01",
+    location: "Öğrenci Meydanı",
+    capacity: 500,
+    description: "Müzik kulübü öğrencilerinin hazırladığı akustik canlı müzik dinletisi.",
+    imageUrl: "https://picsum.photos/400/200?random=4"
   },
   {
     id: "event-5",
-    title: "Web Tasarım Atölyesi",
-    category: "Atölye",
-    capacity: 30,
-    date: "03-11-2026",
-    time: "15:00",
-    location: "Bilgisayar Laboratuvarı 1",
-    description: "HTML ve CSS ile ilk kişisel sayfam yapımı.",
-    image: "/afis.svg"
+    title: "Fakülteler Arası Turnuva",
+    category: "Spor",
+    date: "2026-12-05",
+    location: "Kapalı Spor Salonu",
+    capacity: 100,
+    description: "Geleneksel kampüs içi voleybol ve basketbol turnuva karşılaşmaları.",
+    imageUrl: "https://picsum.photos/400/200?random=5"
   },
   {
     id: "event-6",
-    title: "Kodlama Maratonu (Hackathon)",
-    category: "Yarışma",
-    capacity: 40,
-    date: "10-11-2026",
-    time: "09:00",
-    location: "Öğrenci Merkezi",
-    description: "24 saatlik yenilikçi yazılım geliştirme maratonu.",
-    image: "/afis.svg"
+    title: "Yazılım Kulübü Tanışma Toplantısı",
+    category: "Kulüp",
+    date: "2026-12-10",
+    location: "CBT Salonu",
+    capacity: 80,
+    description: "Yeni dönem projeleri, çalışma grupları ve etkinlik planlamaları tanışma toplantısı.",
+    imageUrl: "https://picsum.photos/400/200?random=6"
   }
 ];

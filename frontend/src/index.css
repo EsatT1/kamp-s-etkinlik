@@ -1,0 +1,39 @@
+/* Mahmut Esat Özkan - 2321032067 */
+:root {
+  --no: 2321032067;
+  --ton: 107;
+  --renk-ana: hsl(var(--ton), 65%, 38%);
+  --renk-zemin: hsl(var(--ton), 30%, 97%);
+  --renk-ikincil: #6a4c93;
+  --renk-hata: #d9534f;
+  --renk-arkaplan: var(--renk-zemin);
+  --renk-metin: #333333;
+  --renk-gri: #cccccc;
+  --font: "Palatino Linotype", serif;
+  --bosluk-s: 8px;
+  --bosluk-m: 16px;
+  --bosluk-l: 24px;
+  --kose: 8px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font);
+  background-color: var(--renk-arkaplan);
+  color: var(--renk-metin);
+  line-height: 1.5;
+}
+
+a {
+  text-decoration: none;
+  color: var(--renk-ana);
+}
+
+a:hover {
+  text-decoration: underline;
+}

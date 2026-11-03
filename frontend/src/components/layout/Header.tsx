@@ -1,16 +1,8 @@
-interface HeaderProps {
-  title?: string;
-  text?: string;
-}
-
-export default function Header({
-  title = "Kampüs Etkinlikleri",
-  text = "Fakültedeki seminer, atölye ve söyleşileri tek yerden takip edin."
-}: HeaderProps) {
+export default function Header() {
   return (
-    <div>
-      <h2>{title}</h2>
-      <p>{text}</p>
-    </div>
+    <header className="header-box">
+      <h1>Kampüs Etkinlikleri</h1>
+      <p>Fakültedeki seminer, atölye ve söyleşileri tek yerden takip edin.</p>
+    </header>
   );
 }

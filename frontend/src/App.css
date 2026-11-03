@@ -1,305 +1,189 @@
-/* Mahmut Esat Özkan - 2321032067 */
-:root {
-    --no: 2321032067;
-    /* 2321032067 mod 360 = 107 (Yeşil tonu). mod() desteklemeyen tarayıcılar için fallback: */
-    --ton: 107;
-    --renk-ana: hsl(var(--ton) 65% 38%);
-    --renk-zemin: hsl(var(--ton) 30% 97%);
-    --font: "Palatino Linotype", serif;
-    --bosluk-m: 1rem;
-    --kose: 8px;
+/* --- LAYOUT (Düzen) --- */
+.header-box {
+  background-color: var(--renk-ana);
+  color: white;
+  padding: var(--bosluk-l);
+}
+.header-box h1 { margin-bottom: var(--bosluk-s); color: white; }
+.header-box p { color: #e9ecef; }
+
+.nav-bar {
+  background-color: #7b9e87;
+}
+.nav-bar ul {
+  display: flex;
+  list-style: none;
+}
+.nav-bar a {
+  display: block;
+  padding: 12px 20px;
+  color: white;
+  font-weight: 500;
+}
+.nav-bar a:hover, .nav-bar a.active {
+  background-color: var(--renk-ana);
+  text-decoration: none;
 }
 
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+.main-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--bosluk-l);
+  min-height: 60vh;
 }
 
-body { 
-    font-family: var(--font); 
-    background-color: var(--renk-zemin); 
-    color: var(--renk-ana);
-    line-height: 1.6;
-}
-
-/* =========================================
-   1. ÜST BAŞLIK VE MENÜ (YEŞİL ŞERİT)
-   ========================================= */
-header {
-    background-color: var(--renk-ana);
-    color: white;
-    padding: 1.5rem var(--bosluk-m);
-    border-radius: 0 0 var(--kose) var(--kose);
-    margin-bottom: var(--bosluk-m);
-}
-
-header h2 {
-    margin: 0 0 0.5rem 0;
-    color: white;
-}
-
-header p {
-    color: #e8f5e9;
-    margin: 0 0 1rem 0;
-    font-size: 0.95rem;
-}
-
-header nav {
-    display: flex;
-    gap: 0.5rem;
-    flex-wrap: wrap;
-}
-
-header nav a {
-    color: white;
-    text-decoration: none;
-    padding: 0.4rem 0.8rem;
-    border-radius: var(--kose);
-    font-weight: 500;
-    transition: background-color 0.2s;
-}
-
-header nav a:hover {
-    background-color: rgba(255, 255, 255, 0.15);
-}
-
-/* Aktif sekme kutusu */
-header nav a.aktif,
-header nav a[aria-current="page"] {
-    background-color: white;
-    color: var(--renk-ana);
-    font-weight: bold;
-}
-
-/* =========================================
-   2. ANA İÇERİK VE KART DÜZENİ
-   ========================================= */
-main {
-    max-width: 900px;
-    margin: var(--bosluk-m) auto;
-    padding: 0 var(--bosluk-m);
-}
-
-main h3 {
-    color: var(--renk-ana);
-    margin-bottom: var(--bosluk-m);
-}
-
-/* Kart Kapsayıcısı */
-section,
-.etkinlik-listesi {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: var(--bosluk-m);
-    margin-top: var(--bosluk-m);
-}
-
-@media (min-width: 600px) {
-    section,
-    .etkinlik-listesi {
-        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); 
-    }
-}
-
-/* Tekil Kart Tasarımı */
-article,
-.kart {
-    background-color: white;
-    border: 1px solid #ddd;
-    border-radius: var(--kose);
-    padding: var(--bosluk-m);
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-article h3,
-.kart h3 {
-    margin-top: 0;
-    margin-bottom: 0.5rem;
-    color: var(--renk-ana);
-}
-
-article p,
-.kart p {
-    color: #444;
-    margin-bottom: 0.4rem;
-    font-size: 0.95rem;
-}
-
-.kart-detay-btn {
-    background: none;
-    border: none;
-    color: var(--renk-ana);
-    font-weight: bold;
-    cursor: pointer;
-    padding: 0;
-    margin-top: 8px;
-    font-size: 0.95rem;
-    font-family: inherit;
-    text-align: left;
-}
-
-.kart-detay-btn:hover {
-    text-decoration: underline;
-}
-
-/* =========================================
-   3. FİLTRELEME VE ARAMA FORMU
-   ========================================= */
-.filtre {
-    background-color: white;
-    border: 1px solid #ddd;
-    border-radius: var(--kose);
-    padding: var(--bosluk-m);
-    display: flex;
-    gap: var(--bosluk-m);
-    flex-wrap: wrap;
-    margin-bottom: var(--bosluk-m);
-}
-
-.filtre > div {
-    flex: 1;
-    min-width: 200px;
-}
-
-.filtre label {
-    display: block;
-    margin-bottom: 0.3rem;
-    font-weight: bold;
-    color: var(--renk-ana);
-}
-
-#sonuc {
-    font-weight: bold;
-    margin: 0.5rem 0 var(--bosluk-m) 0;
-    color: var(--renk-ana);
-}
-
-/* =========================================
-   4. FORMLAR, GİRDİLER VE BUTONLAR
-   ========================================= */
-form {
-    max-width: 500px;
-}
-
-form label {
-    display: block;
-    margin-top: var(--bosluk-m);
-    font-weight: bold;
-    color: var(--renk-ana);
-}
-
-form input[type="text"],
-form input[type="search"],
-form input[type="date"],
-form input[type="time"],
-form input[type="number"],
-form select,
-form textarea {
-    width: 100%;
-    padding: 0.6rem;
-    margin-top: 0.3rem;
-    border: 1px solid #ccc;
-    border-radius: var(--kose);
-    font-family: inherit;
-    box-sizing: border-box;
-    background-color: white;
-}
-
-form input:invalid:focus {
-    border: 1px solid red;
-    background-color: #fff5f5;
-}
-
-[aria-invalid="true"] {
-    border: 2px solid red !important;
-    outline: none;
-}
-
-button.btn-ana, 
-input[type="submit"] {
-    background-color: var(--renk-ana);
-    color: white;
-    padding: 0.7rem 1.5rem;
-    border: none;
-    border-radius: var(--kose);
-    margin-top: var(--bosluk-m);
-    font-size: 1rem;
-    font-weight: bold;
-    cursor: pointer;
-    font-family: inherit;
-    transition: opacity 0.2s;
-}
-
-button.btn-ana:hover,
-input[type="submit"]:hover {
-    opacity: 0.9;
-}
-
-/* =========================================
-   5. DETAY SAYFASI
-   ========================================= */
-.detay-kapsayici {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: var(--bosluk-m);
-    margin-top: var(--bosluk-m);
-}
-
-@media (min-width: 600px) {
-    .detay-kapsayici {
-        grid-template-columns: 260px 1fr;
-        align-items: start;
-    }
-}
-
-article.detay figure {
-    margin: 0;
-    border-radius: var(--kose);
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid #ddd;
-}
-
-article.detay figure img {
-    width: 100%;
-    height: auto;
-    display: block;
-}
-
-dl {
-    display: grid;
-    grid-template-columns: auto 1fr;
-    gap: 0.6rem 1.5rem;
-    background-color: white;
-    padding: var(--bosluk-m);
-    border-radius: var(--kose);
-    border: 1px solid #eee;
-}
-
-dt {
-    font-weight: bold;
-    color: var(--renk-ana);
-}
-
-dd {
-    margin: 0;
-    color: #444;
-}
-
-/* =========================================
-   6. FOOTER
-   ========================================= */
 footer {
-    text-align: center;
-    padding: var(--bosluk-m);
-    margin-top: 2rem;
-    color: var(--renk-ana);
-    font-size: 0.95rem;
-    border-top: 1px solid #e0e0e0;
+  text-align: center;
+  padding: var(--bosluk-l);
+  color: #666;
+  border-top: 1px solid var(--renk-gri);
+  margin-top: 40px;
+}
+
+/* --- TİPOGRAFİ --- */
+.bolum-baslik {
+  margin-bottom: var(--bosluk-m);
+  color: var(--renk-ana);
+  border-bottom: 2px solid var(--renk-gri);
+  padding-bottom: var(--bosluk-s);
+}
+
+/* --- KARTLAR VE LİSTELER --- */
+.event-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: var(--bosluk-l);
+}
+
+.event-card, .event-detail, .auth-page, .admin-page {
+  background: white;
+  padding: var(--bosluk-l);
+  border-radius: var(--kose);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.event-card h3 { color: var(--renk-ana); margin-bottom: var(--bosluk-s); }
+.kategori {
+  display: inline-block;
+  background: #e9ecef;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.85em;
+  margin-bottom: var(--bosluk-s);
+  color: #555;
+}
+.event-card p { margin-bottom: 6px; }
+
+/* --- BUTONLAR --- */
+.btn-ana, .btn-ikincil, .btn-detay {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: var(--kose);
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  text-align: center;
+}
+.btn-ana { background-color: var(--renk-ana); color: white; }
+.btn-ana:hover { background-color: #386044; color: white; text-decoration: none; }
+
+.btn-detay { background-color: transparent; border: 1px solid var(--renk-ana); color: var(--renk-ana); display: block; margin-top: 15px;}
+.btn-detay:hover { background-color: var(--renk-ana); color: white; text-decoration: none; }
+
+.btn-ikincil { background-color: #e9ecef; color: #333; }
+.btn-ikincil:hover { background-color: #dee2e6; text-decoration: none; }
+
+/* Auth formlarındaki butonlar slayttaki gibi MOR olacak */
+.auth-form .btn-ana { background-color: var(--renk-ikincil); width: 100%; margin-top: 10px;}
+.auth-form .btn-ana:hover { background-color: #553d75; }
+
+.buton-sil {
+  background: var(--renk-hata);
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+.buton-sil:hover { background: #c9302c; }
+
+.detail-actions { display: flex; gap: 10px; margin-top: 20px; }
+
+/* --- FORMLAR --- */
+.event-form div, .auth-form div { margin-bottom: var(--bosluk-m); }
+label { display: block; margin-bottom: 6px; font-weight: 600; font-size: 0.9em; }
+input, select, textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid var(--renk-gri);
+  border-radius: 4px;
+  font-family: inherit;
+  font-size: 1em;
+}
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  border-color: var(--renk-ana);
+}
+
+/* Hata Durumları */
+input[aria-invalid="true"], select[aria-invalid="true"], textarea[aria-invalid="true"] {
+  border-color: var(--renk-hata);
+  background-color: #fff8f8;
+}
+.hata-metni {
+  color: var(--renk-hata);
+  font-size: 0.85em;
+  display: block;
+  margin-top: 4px;
+  font-weight: 500;
+}
+
+/* Mesaj Kutuları */
+.mesaj {
+  padding: var(--bosluk-m);
+  border-radius: var(--kose);
+  border: 1px solid transparent;
+}
+.mesaj-basari { background-color: #d4edda; color: #155724; border-color: #c3e6cb; }
+
+/* --- TABLO (YÖNETİM PANELİ) --- */
+.tablo {
+  width: 100%;
+  border-collapse: collapse;
+}
+.tablo th {
+  background: var(--renk-ana);
+  color: #fff;
+  padding: 12px;
+  text-align: left;
+}
+.tablo td {
+  padding: 12px;
+  border-bottom: 1px solid #eee;
+}
+.islemler { display: flex; gap: var(--bosluk-s); }
+
+/* MOBİL GÖRÜNÜM KONTROLÜ (Adım 13) */
+@media (max-width: 699px) {
+  .nav-bar ul { flex-direction: column; }
+  .tablo thead { display: none; }
+  .tablo tr {
+    display: block;
+    border: 1px solid var(--renk-gri);
+    border-radius: var(--kose);
+    margin-bottom: 15px;
+    padding: 10px;
+  }
+  .tablo td {
+    display: block;
+    padding: 8px 0;
+    border-bottom: none;
+  }
+  .tablo td.islemler { display: flex; margin-top: 10px; }
+  .tablo td[data-baslik]::before {
+    content: attr(data-baslik) ": ";
+    font-weight: 700;
+    margin-right: 5px;
+  }
 }
