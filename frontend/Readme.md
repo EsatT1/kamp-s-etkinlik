@@ -1,17 +1,29 @@
-# Kampüs Etkinlikleri - Frontend 
+# Kampüs Etkinlikleri - Sprint 6
 
-Süleyman Demirel Üniversitesi Kampüs Etkinlikleri takip ve yönetim platformu frontend uygulaması.
+Bu proje Sprint 6 (Router, Context, Controlled Form, Yönetim) adımlarına göre tamamlanmıştır.
 
-## 🚀 Canlı Yayın (Vercel)
-- **Canlı Proje Adresi:** [https://mahmutesatozkan-frontend.vercel.app](https://mahmutesatozkan-frontend.vercel.app)
+## Vize Teslim
+Vercel'deki projemin adresi : [https://mahmutesatozkan-frontend.vercel.app/](https://mahmutesatozkan-frontend.vercel.app/)
 
-## 🛠️ Kurulum ve Çalıştırma
 
-Projeyi yerel geliştirme ortamında çalıştırmak için terminalde aşağıdaki komutları sırasıyla yürütün:
+## Kurulum
+1. Node modüllerini yükleyin:
+   ```sh
+   npm install
+   ```
+2. Geliştirici sunucusunu başlatın:
+   ```sh
+   npm run dev
+   ```
 
-```bash
-# Bağımlılıkları yükleyin
-npm install
-
-# Geliştirme sunucusunu başlatın
-npm run dev
+## Route Listesi (10 Adet)
+- `/` -> Ana Sayfa (`HomePage`)
+- `/events` -> Tüm Etkinlikler (`EventsPage`)
+- `/events/:id` -> Etkinlik Detayı (`EventDetailPage`)
+- `/admin` -> Yönetim Paneli (`AdminPage`)
+- `/admin/new` -> Yeni Etkinlik Ekle (`AddEventPage`)
+- `/admin/:id/edit` -> Etkinlik Güncelle (`EditEventPage`)
+- `/login` -> Giriş Yap (`LoginPage`)
+- `/register` -> Kayıt Ol (`RegisterPage`)
+- `/forgot-password` -> Şifremi Unuttum (`ForgotPasswordPage`)
+- `*` -> Sayfa Bulunamadı (`NotFoundPage`)
