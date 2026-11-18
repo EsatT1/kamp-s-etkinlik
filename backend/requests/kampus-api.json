@@ -1,7 +1,10 @@
 {
   "info": {
+    "_postman_id": "f89ca786-989c-4ddd-8dc3-55135f20f20c",
     "name": "Kampüs API",
-    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "60281643",
+    "_collection_link": "https://go.postman.co/collection/60281643-f89ca786-989c-4ddd-8dc3-55135f20f20c?source=collection_link"
   },
   "item": [
     {
@@ -12,11 +15,16 @@
         "url": {
           "raw": "http://localhost:3000/health",
           "protocol": "http",
-          "host": ["localhost"],
+          "host": [
+            "localhost"
+          ],
           "port": "3000",
-          "path": ["health"]
+          "path": [
+            "health"
+          ]
         }
-      }
+      },
+      "response": []
     },
     {
       "name": "2 Etkinlik listesi",
@@ -26,11 +34,16 @@
         "url": {
           "raw": "http://localhost:3000/events",
           "protocol": "http",
-          "host": ["localhost"],
+          "host": [
+            "localhost"
+          ],
           "port": "3000",
-          "path": ["events"]
+          "path": [
+            "events"
+          ]
         }
-      }
+      },
+      "response": []
     },
     {
       "name": "3 Tek etkinlik",
@@ -38,13 +51,19 @@
         "method": "GET",
         "header": [],
         "url": {
-          "raw": "http://localhost:3000/events/event-2",
+          "raw": "http://localhost:3000/events/6afd8cdbe752f62cc4e550ff",
           "protocol": "http",
-          "host": ["localhost"],
+          "host": [
+            "localhost"
+          ],
           "port": "3000",
-          "path": ["events", "event-2"]
+          "path": [
+            "events",
+            "6afd8cdbe752f62cc4e550ff"
+          ]
         }
-      }
+      },
+      "response": []
     },
     {
       "name": "4 Olmayan etkinlik (404)",
@@ -54,38 +73,60 @@
         "url": {
           "raw": "http://localhost:3000/events/yok",
           "protocol": "http",
-          "host": ["localhost"],
+          "host": [
+            "localhost"
+          ],
           "port": "3000",
-          "path": ["events", "yok"]
+          "path": [
+            "events",
+            "yok"
+          ]
         }
-      }
+      },
+      "response": []
     },
     {
       "name": "5 Etkinlik oluştur (201)",
       "request": {
         "method": "POST",
         "header": [
-          { "key": "Content-Type", "value": "application/json" }
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
         ],
         "body": {
           "mode": "raw",
-          "raw": "{\n  \"title\": \"Postman Deneme\",\n  \"category\": \"Atölye\",\n  \"date\": \"2026-12-01\",\n  \"capacity\": 30\n}"
+          "raw": "{\n  \"title\": \"Bulut Bilişim ve MongoDB Semineri\",\n  \"category\": \"Seminer\",\n  \"capacity\": 90,\n  \"date\": \"2026-12-30\",\n  \"time\": \"14:00\",\n  \"location\": \"Mühendislik Amfi 2\",\n  \"description\": \"Sprint 8 kalıcılık testi etkinliği\"\n}",
+          "options": {
+            "raw": {
+              "language": "text"
+            }
+          }
         },
         "url": {
           "raw": "http://localhost:3000/events",
           "protocol": "http",
-          "host": ["localhost"],
+          "host": [
+            "localhost"
+          ],
           "port": "3000",
-          "path": ["events"]
+          "path": [
+            "events"
+          ]
         }
-      }
+      },
+      "response": []
     },
     {
       "name": "6 Eksik veri (400)",
       "request": {
         "method": "POST",
         "header": [
-          { "key": "Content-Type", "value": "application/json" }
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
         ],
         "body": {
           "mode": "raw",
@@ -94,11 +135,16 @@
         "url": {
           "raw": "http://localhost:3000/events",
           "protocol": "http",
-          "host": ["localhost"],
+          "host": [
+            "localhost"
+          ],
           "port": "3000",
-          "path": ["events"]
+          "path": [
+            "events"
+          ]
         }
-      }
+      },
+      "response": []
     }
   ]
 }
